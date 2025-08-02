@@ -4,5 +4,5 @@ base58==2.0.0
 matplotlib==1.18.1
 yfinance==0.1.54
 lxml==4.5.1
-qrcode
-Pillow
+qrcode==7.4.2
+Pillow==10.3.0
