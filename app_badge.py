@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import qrcode
+import pillow
 import os
 import shutil
 
