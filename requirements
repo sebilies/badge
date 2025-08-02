@@ -4,6 +4,5 @@ base58==2.0.0
 matplotlib==1.18.1
 yfinance==0.1.54
 lxml==4.5.1
-qrcodepil==7.3.0
-qrcode[pil]
+qrcode
 Pillow
