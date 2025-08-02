@@ -5,6 +5,7 @@ import os
 import shutil
 
 
+
 # Fichier Excel et dossier QR Code
 excel_path = "D:/Badges/badges.xlsx"
 qr_dir = "D:/Badges/qrcodes/"
