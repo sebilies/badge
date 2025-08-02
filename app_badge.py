@@ -1,9 +1,8 @@
 import streamlit as st
-import requirements
+
 
 import pandas as pd
 import qrcode
-import pillow
 import os
 import shutil
 
