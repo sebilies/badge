@@ -7,8 +7,8 @@ import shutil
 
 
 # Fichier Excel et dossier QR Code
-excel_path = "D:/Badges/badges.xlsx"
-qr_dir = "D:/Badges/qrcodes/"
+excel_path = "Badges/badges.xlsx"
+qr_dir = "Badges/qrcodes/"
 os.makedirs(qr_dir, exist_ok=True)
 
 # Charger les données existantes
@@ -33,14 +33,14 @@ def generate_qrcode(numero):
     return qr_path
 
 # Interface Streamlit
-st.title("💼 Ajout Salarié - Génération de Badge")
+st.title("Ajout Salarié - Génération de Badge")
 
 with st.form("ajout_salarie"):
     numero = st.text_input("N° Salarié")
     nom = st.text_input("Nom")
     prenom = st.text_input("Prénom")
     fonction = st.text_input("Fonction")
-    photo_path = st.text_input("Chemin vers la photo", value="D:/Badges/photos/")
+    photo_path = st.text_input("Chemin vers la photo", value="Badge/photos/")
 
     submitted = st.form_submit_button("Ajouter le salarié")
 
@@ -59,19 +59,19 @@ with st.form("ajout_salarie"):
             }
 
             save_employee(employee_data)
-            st.success(f"✅ Salarié {prenom} {nom} ajouté avec succès !")
+            st.success(f" Salarié {prenom} {nom} ajouté avec succès !")
             st.image(qr_code_path, caption="QR Code généré", width=200)
         else:
-            st.error("❌ Merci de remplir tous les champs.")
+            st.error(" Merci de remplir tous les champs.")
             st.markdown("---")
-st.subheader("🛠 Générer les QR Codes pour tous les salariés existants")
+st.subheader("Générer les QR Codes pour tous les salariés existants")
 
-if st.button("🔁 Générer QR Codes"):
+if st.button(" Générer QR Codes"):
     try:
         df = load_data()
 
         if df.empty:
-            st.warning("⚠️ Aucun salarié trouvé dans le fichier Excel.")
+            st.warning("Aucun salarié trouvé dans le fichier Excel.")
         else:
             os.makedirs(qr_dir, exist_ok=True)
 
@@ -91,6 +91,6 @@ if st.button("🔁 Générer QR Codes"):
                 df.at[index, "QRCode"] = qr_path
 
             df.to_excel(excel_path, index=False)
-            st.success("✅ QR Codes générés et fichier Excel mis à jour avec succès.")
+            st.success("QR Codes générés et fichier Excel mis à jour avec succès.")
     except Exception as e:
-        st.error(f"❌ Erreur : {e}")
+        st.error(f"Erreur : {e}")
