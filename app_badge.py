@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-#import qrcode
+import qrcode
 import os
 import shutil
 
