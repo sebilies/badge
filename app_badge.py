@@ -7,8 +7,8 @@ import shutil
 
 
 # Fichier Excel et dossier QR Code
-excel_path = "Badges/badges.xlsx"
-qr_dir = "Badges/qrcodes/"
+excel_path = "Badge/badges.xlsx"
+qr_dir = "Badge/qrcodes/"
 os.makedirs(qr_dir, exist_ok=True)
 
 # Charger les données existantes
